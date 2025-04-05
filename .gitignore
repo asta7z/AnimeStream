@@ -17,6 +17,9 @@ build/
 .env.local
 .env.*.local
 
+# Allow .env files for GitHub uploads
+!.env
+
 # IDE files
 .vscode/
 .idea/
@@ -25,3 +28,7 @@ build/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Git-related files
+.git/
+.gitignore
