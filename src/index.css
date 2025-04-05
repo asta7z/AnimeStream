@@ -1,0 +1,283 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #1a1a1a, #000);
+    color: #e5e5e5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff4d4d;
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 16px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header form {
+    position: relative;
+}
+
+header input[type="text"] {
+    padding: 8px 16px;
+    border-radius: 9999px;
+    border: 1px solid #333;
+    background: #333;
+    color: #e5e5e5;
+    width: 250px;
+}
+
+header button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    color: #999;
+}
+
+header nav {
+    display: flex;
+    gap: 16px;
+}
+
+header nav a {
+    color: #e5e5e5;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #ff4d4d;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.hero .content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    padding: 16px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+    color: #ccc;
+}
+
+.hero .buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.hero button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.hero .btn-primary {
+    background: #ff4d4d;
+    color: #fff;
+}
+
+.hero .btn-primary:hover {
+    background: #e60000;
+}
+
+.hero .btn-secondary {
+    background: #333;
+    color: #fff;
+}
+
+.hero .btn-secondary:hover {
+    background: #444;
+}
+
+/* Anime List */
+.anime-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.anime-item {
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anime-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.anime-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.anime-item .content {
+    padding: 16px;
+}
+
+.anime-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.anime-item p {
+    font-size: 0.875rem;
+    color: #ccc;
+    margin-bottom: 16px;
+}
+
+.anime-item button {
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: #444;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.anime-item button:hover {
+    background: #555;
+}
+
+/* Episode List */
+.episode-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.episode-item {
+    display: flex;
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.episode-item .thumbnail {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.episode-item .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.episode-item .thumbnail .episode-number {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.episode-item .content {
+    padding: 16px;
+    flex: 1;
+}
+
+.episode-item h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.episode-item button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: #444;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.episode-item button:hover {
+    background: #555;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: #ccc;
+    padding: 32px 16px;
+    text-align: center;
+}
+
+footer a {
+    color: #ff4d4d;
+}
+
+footer a:hover {
+    color: #e60000;
+}

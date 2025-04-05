@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Streamer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/tailwind.config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-b from-gray-900 to-black text-gray-200 font-anime min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="bg-black/90 shadow-lg sticky top-0 z-50 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-3 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <a href="#" class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700 tracking-wide flex items-center">
+                    <span class="text-red-500 mr-2"><i class="fas fa-play-circle"></i></span>
+                    AnimeStream
+                </a>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="relative mb-4 md:mb-0 md:mr-6">
+                    <input type="text" placeholder="Search anime..." class="bg-gray-800 text-gray-200 px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <button class="absolute right-3 top-2 text-gray-400 hover:text-white search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <nav class="flex">
+                    <a href="#" class="text-white hover:text-red-500 mx-2 md:mx-4 flex items-center"><i class="fas fa-home mr-1"></i> Home</a>
+                    <a href="#genres" class="text-white hover:text-red-500 mx-2 md:mx-4 flex items-center"><i class="fas fa-list mr-1"></i> Genres</a>
+                    <a href="#about" class="text-white hover:text-red-500 mx-2 md:mx-4 flex items-center"><i class="fas fa-info-circle mr-1"></i> About</a>
+                    <a href="#contact" class="text-white hover:text-red-500 mx-2 md:mx-4 flex items-center"><i class="fas fa-envelope mr-1"></i> Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Main Banner) -->
+    <section class="relative h-[500px] bg-cover bg-center" style="background-image: url('/api/placeholder/1200/500');">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent flex justify-center items-center text-center text-white">
+            <div class="max-w-2xl px-6">
+                <h2 class="text-4xl md:text-5xl font-bold mb-2">Stream Your Favorite Anime</h2>
+                <p class="text-lg md:text-xl mt-4 mb-6 text-gray-300">Unlimited access to the latest and most popular anime titles.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="px-8 py-3 bg-gradient-to-r from-red-600 to-red-500 text-white text-lg rounded-md hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-lg shadow-red-700/30 flex items-center justify-center">
+                        <i class="fas fa-play mr-2"></i> Start Watching
+                    </button>
+                    <button class="px-8 py-3 bg-gray-800/80 text-white text-lg rounded-md hover:bg-gray-700 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-info-circle mr-2"></i> Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Floating genre tags -->
+        <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2 flex-wrap px-4">
+            <span class="bg-red-500/80 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">Action</span>
+            <span class="bg-blue-500/80 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">Adventure</span>
+            <span class="bg-green-500/80 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">Fantasy</span>
+            <span class="bg-purple-500/80 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">Romance</span>
+            <span class="bg-yellow-500/80 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">Comedy</span>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="container mx-auto px-6 py-12 flex-grow">
+
+        
+                <!-- Navigation arrows -->
+                <button class="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- All Anime Section -->
+        <section class="mb-16">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-white">All Anime</h2>
+                <div class="flex items-center">
+                    <div class="mr-4">
+                        <select class="bg-gray-800 text-gray-300 rounded py-1 px-3 border border-gray-700">
+                            <option>Sort By: Popularity</option>
+                            <option>Rating</option>
+                            <option>Latest</option>
+                        </select>
+                    </div>
+                    <a href="#" class="text-red-500 hover:text-red-400 flex items-center">
+                        View All <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" id="anime-list">
+                <!-- Anime list will be dynamically loaded here -->
+                <div class="animate-pulse">
+                    <div class="bg-gray-700 h-64 rounded-t-lg"></div>
+                    <div class="p-4 bg-gray-800 rounded-b-lg">
+                        <div class="h-6 bg-gray-700 rounded mb-3"></div>
+                        <div class="h-4 bg-gray-700 rounded mb-3 w-3/4"></div>
+                        <div class="h-8 bg-gray-700 rounded"></div>
+                    </div>
+                </div>
+                <!-- More loading placeholders -->
+                <div class="animate-pulse">
+                    <div class="bg-gray-700 h-64 rounded-t-lg"></div>
+                    <div class="p-4 bg-gray-800 rounded-b-lg">
+                        <div class="h-6 bg-gray-700 rounded mb-3"></div>
+                        <div class="h-4 bg-gray-700 rounded mb-3 w-3/4"></div>
+                        <div class="h-8 bg-gray-700 rounded"></div>
+                    </div>
+                </div>
+                <div class="animate-pulse">
+                    <div class="bg-gray-700 h-64 rounded-t-lg"></div>
+                    <div class="p-4 bg-gray-800 rounded-b-lg">
+                        <div class="h-6 bg-gray-700 rounded mb-3"></div>
+                        <div class="h-4 bg-gray-700 rounded mb-3 w-3/4"></div>
+                        <div class="h-8 bg-gray-700 rounded"></div>
+                    </div>
+                </div>
+                <div class="animate-pulse">
+                    <div class="bg-gray-700 h-64 rounded-t-lg"></div>
+                    <div class="p-4 bg-gray-800 rounded-b-lg">
+                        <div class="h-6 bg-gray-700 rounded mb-3"></div>
+                        <div class="h-4 bg-gray-700 rounded mb-3 w-3/4"></div>
+                        <div class="h-8 bg-gray-700 rounded"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Player Section (Hidden by default) -->
+        <div id="video-container" class="hidden mb-16">
+            <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <div class="relative pt-[56.25%]">
+                    <video id="video-player" controls class="absolute inset-0 w-full h-full">
+                        <source id="video-source" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Episode Title</h3>
+                            <p class="text-gray-400">Season 1 • Episode 3</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <button class="flex items-center text-gray-400 hover:text-white">
+                                <i class="far fa-heart mr-2"></i> Add to Favorites
+                            </button>
+                            <button class="flex items-center text-gray-400 hover:text-white">
+                                <i class="fas fa-share-alt mr-2"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">Episode description goes here. This would typically contain a brief synopsis of what happens in the episode without revealing major spoilers.</p>
+                    <div class="flex gap-3">
+                        <button class="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-md flex items-center">
+                            <i class="fas fa-step-backward mr-2"></i> Previous
+                        </button>
+                        <button class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md flex items-center">
+                            <i class="fas fa-step-forward mr-2"></i> Next Episode
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="bg-gray-800 py-12 mb-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Stay Updated with New Releases</h3>
+                <p class="text-gray-300 mb-6">Subscribe to our newsletter for weekly updates on the latest anime episodes.</p>
+                <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow bg-gray-700 text-white px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <button class="px-6 py-3 bg-red-500 hover:bg-red-600 text-white rounded-md font-medium">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-gray-400 pt-12 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-4">AnimeStream</h4>
+                    <p class="mb-4">Your ultimate destination for all things anime. Watch your favorite shows anytime, anywhere.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Browse Anime</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Genres</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">New Releases</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Top Rated</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-4">Help & Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">DMCA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-white mb-4">Download Our App</h4>
+                    <p class="mb-4">Watch on the go with our mobile application.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="#" class="bg-gray-800 hover:bg-gray-700 p-2 rounded flex items-center">
+                            <i class="fab fa-google-play text-2xl mr-3"></i>
+                            <div>
+                                <div class="text-xs">Get it on</div>
+                                <div class="text-sm font-medium">Google Play</div>
+                            </div>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-gray-700 p-2 rounded flex items-center">
+                            <i class="fab fa-apple text-2xl mr-3"></i>
+                            <div>
+                                <div class="text-xs">Download on</div>
+                                <div class="text-sm font-medium">App Store</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p>&copy; 2025 AnimeStream. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+
+</body>
+</html>
